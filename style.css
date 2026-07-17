@@ -1,0 +1,302 @@
+/* ===========================
+   AYUSH K MENON PORTFOLIO
+   Version 1.0
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#F8FAFC;
+    color:#0F172A;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ---------- Navigation ---------- */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#ffffff;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+
+.navbar{
+    width:min(1200px,92%);
+    margin:auto;
+    height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-weight:800;
+    font-size:1.15rem;
+    letter-spacing:1px;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap:2rem;
+}
+
+.navbar a{
+    font-weight:600;
+    transition:.25s;
+}
+
+.navbar a:hover{
+    color:#2563EB;
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:4rem 1rem;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-weight:800;
+    margin-bottom:.5rem;
+}
+
+.hero h2{
+    color:#2563EB;
+    font-size:1.8rem;
+    margin-bottom:1.5rem;
+}
+
+.hero p{
+    max-width:700px;
+    margin:0 auto 2rem;
+    font-size:1.15rem;
+    color:#475569;
+}
+
+.btn{
+    display:inline-block;
+    background:#2563EB;
+    color:#fff;
+    padding:15px 34px;
+    border-radius:10px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1D4ED8;
+    transform:translateY(-2px);
+}
+
+/* ---------- Generic Sections ---------- */
+
+section{
+    width:min(1100px,92%);
+    margin:0 auto;
+    padding:5rem 0;
+}
+
+section h2{
+    text-align:center;
+    font-size:2.2rem;
+    margin-bottom:2rem;
+}
+
+#about p,
+#resume p{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:#475569;
+}
+
+/* ---------- Skills ---------- */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1.3rem;
+}
+
+.skill{
+    background:#fff;
+    border-radius:14px;
+    padding:2rem 1rem;
+    text-align:center;
+    font-weight:700;
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+/* ---------- Project ---------- */
+
+.project-card{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:2rem;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,.07);
+}
+
+.project-image{
+    min-height:320px;
+    background:linear-gradient(135deg,#DBEAFE,#BFDBFE);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#1E3A8A;
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+.project-info{
+    padding:2.5rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.project-info h3{
+    font-size:2rem;
+    margin-bottom:1rem;
+}
+
+.project-info p{
+    margin-bottom:1rem;
+    color:#475569;
+}
+
+/* ---------- Resume ---------- */
+
+#resume{
+    text-align:center;
+}
+
+#resume .btn{
+    margin-top:2rem;
+}
+
+/* ---------- Contact ---------- */
+
+#contact ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    margin-top:2rem;
+    flex-wrap:wrap;
+}
+
+#contact a{
+    background:#fff;
+    padding:16px 28px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+    transition:.25s;
+    font-weight:600;
+}
+
+#contact a:hover{
+    color:#2563EB;
+    transform:translateY(-3px);
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+    text-align:center;
+    padding:2rem;
+    background:#fff;
+    color:#64748B;
+    margin-top:3rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:900px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.project-card{
+    grid-template-columns:1fr;
+}
+
+.project-image{
+    min-height:240px;
+}
+
+.navbar{
+    flex-direction:column;
+    height:auto;
+    padding:1rem 0;
+}
+
+.navbar ul{
+    margin-top:1rem;
+    gap:1rem;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+    font-size:2.4rem;
+}
+
+.hero h2{
+    font-size:1.4rem;
+}
+
+section h2{
+    font-size:1.8rem;
+}
+
+.btn{
+    width:100%;
+    max-width:280px;
+}
+
+}
