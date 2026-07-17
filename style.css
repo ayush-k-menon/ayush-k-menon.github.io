@@ -1,0 +1,283 @@
+/* ===========================================
+   AYUSH K MENON PORTFOLIO - VERSION 3
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    color:#fff;
+    background:#050b1d;
+    line-height:1.7;
+}
+
+/* ---------- HERO BACKGROUND ---------- */
+
+.hero-background{
+    min-height:90vh;
+    background:
+        linear-gradient(rgba(5,10,25,.55),rgba(5,10,25,.55)),
+        url("images/background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero-intro{
+    max-width:850px;
+}
+
+.hero-intro h1{
+    font-size:4.8rem;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.hero-intro h2{
+    color:#7fb4ff;
+    font-size:2rem;
+    margin-bottom:25px;
+}
+
+.hero-intro p{
+    max-width:700px;
+    margin:auto;
+    color:#d8e5ff;
+    font-size:1.15rem;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 34px;
+    border-radius:12px;
+    background:#2d6df6;
+    color:white;
+    font-weight:700;
+    transition:.2s;
+    text-decoration:none;
+    box-shadow:0 12px 25px rgba(45,109,246,.35);
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    background:#4b84ff;
+}
+
+.btn:active{
+    transform:translateY(1px);
+}
+
+/* ---------- MAIN BOX ---------- */
+
+main{
+    width:min(1180px,92%);
+    margin:-110px auto 40px;
+    background:#10192f;
+    border-radius:28px;
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+    overflow:hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:26px 40px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-weight:800;
+    font-size:1.3rem;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:16px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:10px;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    background:#2d6df6;
+}
+
+/* ---------- SECTIONS ---------- */
+
+section{
+    padding:55px 65px;
+}
+
+section>h2{
+    margin-bottom:22px;
+    font-size:2rem;
+}
+
+.content-card{
+    background:#172554;
+    border-radius:18px;
+    padding:32px;
+}
+
+.content-card h2{
+    margin-bottom:18px;
+}
+
+/* ---------- SKILLS ---------- */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+}
+
+.skill{
+    background:#172554;
+    border-radius:16px;
+    padding:24px;
+    text-align:center;
+    transition:.2s;
+}
+
+.skill:hover{
+    transform:translateY(-4px);
+}
+
+/* ---------- PROJECT ---------- */
+
+.project-card{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    background:#172554;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.project-image{
+    min-height:340px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#2d6df6,#513bdb);
+    font-weight:700;
+}
+
+.project-info{
+    padding:35px;
+}
+
+.project-info h3{
+    font-size:1.8rem;
+    margin-bottom:8px;
+}
+
+.project-stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin:24px 0;
+}
+
+.project-stats div{
+    background:#0d1529;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+}
+
+/* ---------- RESUME ---------- */
+
+#resume p{
+    margin-bottom:18px;
+}
+
+/* ---------- CONTACT ---------- */
+
+.contact-buttons{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#b9c5de;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:900px){
+
+.hero-intro h1{
+    font-size:3rem;
+}
+
+.hero-intro h2{
+    font-size:1.5rem;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:18px;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.project-card{
+    grid-template-columns:1fr;
+}
+
+section{
+    padding:45px 24px;
+}
+
+main{
+    margin:-70px auto 30px;
+}
+
+}
+
+@media(max-width:600px){
+
+.btn{
+    width:100%;
+    text-align:center;
+}
+
+.hero-background{
+    min-height:75vh;
+    background-attachment:scroll;
+}
+
+}
