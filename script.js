@@ -1,23 +1,27 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* ===========================================
-       PROJECT TAB NAVIGATION
-    =========================================== */
-
     const tabButtons = document.querySelectorAll(".project-tab");
     const tabContents = document.querySelectorAll(".tab-content");
     const projectContent = document.getElementById("project-content");
 
     function switchTab(tabName) {
+        // Show the selected tab content
         tabContents.forEach((content) => {
-            content.classList.toggle("active", content.id === tabName);
+            if (content.id === tabName) {
+                content.classList.add("active");
+            } else {
+                content.classList.remove("active");
+            }
         });
 
+        // Update all tab buttons, including top and bottom tabs
         tabButtons.forEach((button) => {
             const isActive = button.dataset.tab === tabName;
 
-            button.classList.toggle("active", isActive);
+            if (isActive) {
+                button.classList.add("active");
+            } else {
+                button.classList.remove("active");
+            }
 
             button.setAttribute(
                 "aria-selected",
@@ -25,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         });
 
+        // Scroll back to the top of the project content
         if (projectContent) {
             const topPosition =
                 projectContent.getBoundingClientRect().top +
@@ -37,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Add click functionality to each tab
     tabButtons.forEach((button) => {
-
         button.setAttribute(
             "aria-selected",
             button.classList.contains("active")
@@ -54,142 +59,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
-
-    /* ===========================================
-       DASHBOARD FULLSCREEN IMAGE VIEWER
-    =========================================== */
-
-    const dashboardImages =
-        document.querySelectorAll(".fullscreen-trigger");
-
-    const lightbox =
-        document.getElementById("image-lightbox");
-
-    const lightboxImage =
-        document.getElementById("lightbox-image");
-
-    const closeButton =
-        document.getElementById("lightbox-close");
-
-
-    function openLightbox(image) {
-
-        if (!lightbox || !lightboxImage) {
-            return;
-        }
-
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
-
-        lightbox.classList.add("active");
-
-        lightbox.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-        document.body.classList.add(
-            "lightbox-open"
-        );
-
-        if (closeButton) {
-            closeButton.focus();
-        }
-    }
-
-
-    function closeLightbox() {
-
-        if (!lightbox || !lightboxImage) {
-            return;
-        }
-
-        lightbox.classList.remove("active");
-
-        lightbox.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-        document.body.classList.remove(
-            "lightbox-open"
-        );
-
-        lightboxImage.src = "";
-        lightboxImage.alt = "";
-    }
-
-
-    /* Open dashboard in fullscreen */
-
-    dashboardImages.forEach((image) => {
-
-        image.addEventListener("click", () => {
-            openLightbox(image);
-        });
-
-
-        /* Keyboard accessibility */
-
-        image.addEventListener(
-            "keydown",
-            (event) => {
-
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
-                    event.preventDefault();
-
-                    openLightbox(image);
-                }
-            }
-        );
-    });
-
-
-    /* Close using Back button */
-
-    if (closeButton) {
-
-        closeButton.addEventListener(
-            "click",
-            closeLightbox
-        );
-    }
-
-
-    /* Close by clicking outside image */
-
-    if (lightbox) {
-
-        lightbox.addEventListener(
-            "click",
-            (event) => {
-
-                if (event.target === lightbox) {
-                    closeLightbox();
-                }
-            }
-        );
-    }
-
-
-    /* Close using Escape key */
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (
-                event.key === "Escape" &&
-                lightbox &&
-                lightbox.classList.contains("active")
-            ) {
-                closeLightbox();
-            }
-        }
-    );
-
 });
