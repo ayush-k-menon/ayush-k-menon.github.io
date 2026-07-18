@@ -252,7 +252,7 @@ body:not(.project-page) main > section > h2 {
     max-width: none;
     max-height: none;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 22px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
