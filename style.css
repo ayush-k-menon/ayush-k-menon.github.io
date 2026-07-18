@@ -1067,3 +1067,46 @@ body.lightbox-open {
         left: 14px;
     }
 }
+
+
+/* FINAL TECHNICAL SKILLS LOGO OVERRIDE */
+
+.skills-logo-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 25px;
+}
+
+.skill-logo-card {
+    width: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-logo-card img {
+    display: block !important;
+    width: 200px !important;
+    height: 100px !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+.skill-logo-card:hover {
+    transform: none !important;
+}
+
+.skill-logo-card img:hover {
+    transform: translateY(-3px);
+}
